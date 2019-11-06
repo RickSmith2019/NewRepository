@@ -28,18 +28,7 @@ namespace EnrollmentApplication.Controllers
             return student;
         }
 
-        public ActionResult StudentSearch(string q)
-        {
-            var students = GetStudents(q);
-            return PartialView("_StudentSearch", students);
-        }
-
-        private List<Student> GetStudents(string searchString)
-        {
-            return db.Students
-                .Where(a => a.LastName.Contains(searchString))
-                .ToList();
-        }
+       
 
         // GET: Students
         public ActionResult Index()

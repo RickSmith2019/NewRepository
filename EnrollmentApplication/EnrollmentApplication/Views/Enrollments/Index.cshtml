@@ -9,7 +9,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">Student search</div>
     <div class="panel-body">
-        @using (Ajax.BeginForm("_StudentSearch", "Enrollments",
+        @using (Ajax.BeginForm("StudentSearch", "Enrollments",
         new AjaxOptions
         {
             InsertionMode = InsertionMode.Replace,
@@ -22,7 +22,7 @@
             <input type="text" name="q" />
             <input type="submit" value="search" />
             <img id="ajax-loader"
-                 src="@Url.Content("~/Images/ajax-loader.gif")"
+                 src="@Url.Content("~/Content/Images/ajax-loader.gif")"
                  style="display:none" />
         }
         <div id="searchresults"></div>
@@ -32,23 +32,23 @@
 <div class="panel panel-default">
     <div class="panel-heading">Course search</div>
     <div class="panel-body">
-        @using (Ajax.BeginForm("_CourseSearch", "Enrollments",
+        @using (Ajax.BeginForm("CourseSearch", "Enrollments",
         new AjaxOptions
         {
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "GET",
             OnFailure = "searchFailed",
             LoadingElementId = "ajax-loader",
-            UpdateTargetId = "searchresults",
+            UpdateTargetId = "searchresults2",
         }))
         {
             <input type="text" name="q" />
             <input type="submit" value="search" />
             <img id="ajax-loader"
-                 src="@Url.Content("~/Images/ajax-loader.gif")"
+                 src="@Url.Content("~/Content/Images/ajax-loader.gif")"
                  style="display:none" />
         }
-        <div id="searchresults"></div>
+        <div id="searchresults2"></div>
     </div>
 </div>
 
@@ -120,3 +120,8 @@
     }
 
 </table>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>   
+}
+
