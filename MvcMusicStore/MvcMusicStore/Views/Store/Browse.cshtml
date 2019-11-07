@@ -3,27 +3,21 @@
 @{
     ViewBag.Title = "Browse";
 }
+<br />
+<br />
+<br />
+<img src="~/Content/Images/logo.png" width="120"/>
+<h1>ASP.NET MVC MUSIC STORE</h1>
+<hr />
+<h2>Browse by Genre</h2>
 
-<h2>Browse</h2>
-
-
-<p>
-    @Html.ActionLink("Browse", "Genre")
-</p>
-<ul>
+@foreach (var item in Model)
+{
     <li>
 
-        @Html.DisplayNameFor(model => model.Name)
+        @Html.ActionLink(item.Name, "Index", new { id = item.GenreId })
 
     </li>
-
-    @foreach (var item in Model)
-    {
-        <li>
-
-            @Html.DisplayFor(modelItem => item.Name)
-
-        </li>
-    }
+}
 
 </ul>

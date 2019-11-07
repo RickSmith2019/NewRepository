@@ -2,27 +2,25 @@
 @{
     ViewBag.Title = "Index";
 }
+<br />
+<br />
+<br />
+<img src="~/Content/Images/logo.png" width="120" />
+<h1>ASP.NET MVC MUSIC STORE</h1>
+<hr />
+<h2>Here are the list of albums</h2>
 
-<h2>Albums</h2>
-
-
-<p>
-    @Html.ActionLink("List", "Albums")
-</p>
 <ul>
-    <li>
 
-        @Html.DisplayNameFor(model => model.Title)
-
-    </li>
 
     @foreach (var item in Model)
     {
         <li>
 
-            @Html.DisplayFor(modelItem => item.Title)
+            @Html.ActionLink(item.Title, "Details", new { id = item.AlbumId })
 
         </li>
     }
 
 </ul>
+@Html.ActionLink("Back to Browse", "Browse")

@@ -11,23 +11,23 @@ namespace MvcMusicStore.Controllers
     {
         MusicStoreDB db = new MusicStoreDB();
         // GET: Store
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            
+            var albumnList = db.Albums
+                .Where(a => a.GenreId == id)
+                .ToList();
 
-            return View();
+            return View(albumnList);
         }
 
         public ActionResult Browse()
         {            
-            
-            return View();
+            return View(db.Genres.ToList());
         }
 
-        public ActionResult Details()
-        {
-            
-            return View();
+        public ActionResult Details(int id)
+        {            
+            return View(db.Albums.Find(id));
         }
         
     }
