@@ -170,6 +170,7 @@
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\StoreManagerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -179,22 +180,31 @@
     <Compile Include="Migrations\201910172024177_InitialCreate.Designer.cs">
       <DependentUpon>201910172024177_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911081527202_Update2.cs" />
+    <Compile Include="Migrations\201911081527202_Update2.Designer.cs">
+      <DependentUpon>201911081527202_Update2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MusicStoreDB.cs" />
     <Compile Include="Models\MusicStoreDbInitializer.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\SampleData.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Images\home-showcase.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\placeholder.gif" />
@@ -265,6 +275,7 @@
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -282,6 +293,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910172024177_InitialCreate.resx">
       <DependentUpon>201910172024177_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911081527202_Update2.resx">
+      <DependentUpon>201911081527202_Update2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
